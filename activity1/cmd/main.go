@@ -6,6 +6,7 @@ import (
 
 	bruceforce "github.com/saenyakorn/2110413-COMP-SECURITY/internal/bruce-force"
 	"github.com/saenyakorn/2110413-COMP-SECURITY/internal/dictionary"
+	"github.com/saenyakorn/2110413-COMP-SECURITY/internal/hasher"
 	"github.com/saenyakorn/2110413-COMP-SECURITY/internal/rainbow"
 )
 
@@ -66,8 +67,6 @@ func main() {
 		evaluateBruceforce(2)
 		evaluateBruceforce(3)
 		evaluateBruceforce(4)
-		evaluateBruceforce(5)
-		fmt.Println("----------------------------------------------------")
 	}
 }
 
@@ -76,7 +75,16 @@ func evaluateBruceforce(length int) {
 	start := time.Now()
 	words := bf.GenerateWords(length)
 	duration := time.Since(start)
-	fmt.Println("Number of words:", len(words))
 	fmt.Println("Generate words of length", length, "elapsed time:", duration)
-	fmt.Println("Average time per words", duration/time.Duration(len(words)))
+	fmt.Println("Number of generated words:", len(words))
+	fmt.Println("Average generation time per words", duration/time.Duration(len(words)))
+	// Hash Rate
+	start = time.Now()
+	for _, w := range words {
+		hasher.GetSHA1Hash(w)
+	}
+	duration = time.Since(start)
+	fmt.Println("Total hashing time:", duration)
+	fmt.Println("Hash rate:", duration/time.Duration(len(words)))
+	fmt.Println("----------------------------------------------------")
 }
