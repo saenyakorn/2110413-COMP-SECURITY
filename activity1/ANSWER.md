@@ -169,4 +169,9 @@ What is salt? Please explain its role in protecting a password hash.
 
 ### Answer
 
-Salt คือ random string ที่เป็นส่วนขยายของ hashed password ที่เติมเข้าไปใน hased passowrd เพื่อป้องกันไม่ให้ password โดนโจมตีด้วย Bruceforce / Hash table ได้
+Salt คือ random string ที่เติมเข้าไปใน passowrd ก่อนจะ hash ซึ่งกระบวนการนี้จะการันตีว่า salted password ทีไ่ด้จะ unique เสมอ แม้ว่าจะมี original password เดียวกันก็ตาม โดย salt จะสร้างมาจาก cryptographically secure function ซึ่งจะทำให้การโดนโจมตีด้วย Bruceforce / Hash table ทำได้ยากขึ้น เช่น
+
+- Password: `Hello`
+- Salt: `Fopm3`
+- Salted Password: `Fopm3Hello`
+- Hashed Password: `7528ed35c6ebf7e4661a02fd98ab88d92ccf4e48a4b27338fcc194b90ae8855c`
