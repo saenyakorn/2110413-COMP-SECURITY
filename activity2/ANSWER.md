@@ -130,7 +130,7 @@ Identify resources (data and objects)
 | Student Account - Personal Data      | ข้อมูลส่วนตัวของนิสิต เช่น ชื่อ นามสกุล วันเกิด และอื่น ๆ   |
 | Student Account - Course             | วิชาที่กำลังรอการอนุมัติการลงทะเบียนเรียน                   |
 | Student Account - Grade              | เกรดในแต่ละวิชาทั้งหมดของนิสิต                              |
-| Student Account - Degree Certificate | ใบปริญาของนิสิต                                             |
+| Student Account - Degree Certificate | ใบปริญญาของนิสิต                                            |
 | Student Account - Advisor            | ข้อมูลของอาจารย์ที่ปรึกษา                                   |
 | Teacher Account - Personal Data      | ข้อมูลส่วนตัวของอาจารย์ เช่น ชื่อ นามสกุล วันเกิด และอื่น ๆ |
 | Teacher Account - Course             | ข้อมูลรายวิชาที่อาจารย์เป็นเจ้าของ                          |
