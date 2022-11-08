@@ -1,0 +1,3 @@
+essential-generators
+readchar
+numpy
