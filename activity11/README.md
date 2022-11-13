@@ -1,4 +1,4 @@
-# Activity X: Computer Forensics <!-- omit in toc -->
+# Activity VII: Soft Biometric (Keystroke) <!-- omit in toc -->
 
 By Saenyakorn Siangsanoh 6232035721 and Poravee Binhayeearason 6230314421
 
