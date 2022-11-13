@@ -20,7 +20,25 @@ How many words do we need to correctly identify the person?
 
 ## Answer
 
-เพื่อที่จะให้มี digrah ที่มีขนาดใหญ่พอที่จะใช้เปรียบเทียบ จำเป็นจะต้องใช้อย่างน้อย 10 คำ ที่ต้องมีคู้ของตัวอัักษรไม่ซ้ำกัน
+เราได้ทำการเขียนโปรแกรมทำการสร้าง digraph โดยเชื่อว่าเป็น biometric ของบุคคลที่แตกต่างกัน ประกอบด้วย
+
+code ของ การสร้างคำเพื่อใช้ทดสอบ
+
+![](./assets/text_manager.png)
+
+code ของ การสร้าง digraph
+
+![](./assets/digraph.png)
+
+code ของการ load, store digraph ทีได้
+
+![](./assets/result_manager.png)
+
+code ของการตรวจสอบ similarity
+
+![](./assets/identify.png)
+
+เพื่อที่จะให้มี digraph ที่มีขนาดใหญ่พอที่จะใช้เปรียบเทียบ จำเป็นจะต้องใช้อย่างน้อย 10 คำ ที่ต้องมีคู้ของตัวอัักษรไม่ซ้ำกัน
 
 # 2
 
