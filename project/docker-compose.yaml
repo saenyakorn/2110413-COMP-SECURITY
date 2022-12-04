@@ -1,0 +1,9 @@
+version: '3.9'
+
+services:
+  web-dwva:
+    container_name: dvwa
+    image: vulnerables/web-dvwa
+    ports:
+      - '8080:80'
+    restart: always
