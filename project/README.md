@@ -78,6 +78,8 @@ For each vulnerability, suggest/show a fix for it. If it is a threat (cannot be 
 | :------------: | :-----------------: | :-------------------: | :--------------: |
 |  Average (2)   |   Widespread (3)    |       Easy (3)        |   Moderate (2)   |
 
+URL: [http://localhost:8080/vulnerabilities/brute/](http://localhost:8080/vulnerabilities/brute/)
+
 คือการสุ่มหา password ที่ถูกต้องจาก username ที่เราอาจจะรู้อยู่แล้วด้วยการลองสร้าง password ขึ้นมาแบบสุ่ม ๆ แล้วลอง login ดูว่าเข้าสู่ระบบได้หรือไม่
 
 ![](./assets/bruce-force.png)
@@ -108,6 +110,8 @@ For each vulnerability, suggest/show a fix for it. If it is a threat (cannot be 
 | Exploitability | Weakness Prevalence | Weakness Detecability | Technical Impact |
 | :------------: | :-----------------: | :-------------------: | :--------------: |
 |  Average (2)   |    Uncommon (1)     |      Average (2)      |    Severe (3)    |
+
+URL: [http://localhost:8080/vulnerabilities/exec/#](http://localhost:8080/vulnerabilities/exec/#)
 
 คือการส่ง command ผ่าน input ใน website กลับไปให้ server ซึ่ง server จะเอา command นั้นไป execute ตรง ๆ โดยไม่มีการตรวจสอบ
 
@@ -140,6 +144,8 @@ For each vulnerability, suggest/show a fix for it. If it is a threat (cannot be 
 | :------------: | :-----------------: | :-------------------: | :--------------: |
 |    Easy (3)    |    Uncommon (2)     |       Easy (3)        |   Moderate (2)   |
 
+URL: [http://localhost:8080/vulnerabilities/csrf/?password_new=password&password_conf=password&Change=Change#](http://localhost:8080/vulnerabilities/csrf/?password_new=password&password_conf=password&Change=Change#)
+
 ในกรณีของ DVWA จะสังเกตได้ว่า URL หลังจากลองเปลี่ยน password คือ `http://localhost:8080/vulnerabilities/csrf/?password_new=password&password_conf=password&Change=Change#` ดังนั้นเราสามารถสร้าง URL ที่มี parameter ตามที่เราต้องการแล้วส่งไปให้เพื่อนกด จากนั้นเราก็จะรู้ password ของเพื่อนคนนั้นโดยปริยาย
 
 ### Exploitability
@@ -169,6 +175,8 @@ For each vulnerability, suggest/show a fix for it. If it is a threat (cannot be 
 | Exploitability | Weakness Prevalence | Weakness Detecability | Technical Impact |
 | :------------: | :-----------------: | :-------------------: | :--------------: |
 |  Moderate (2)  |   widespread (3)    |      Average (2)      |   Servere (3)    |
+
+URL: [http://localhost:8080/vulnerabilities/sqli/?id=%27+OR+1%3D1%3B+--+&Submit=Submit#](http://localhost:8080/vulnerabilities/sqli/?id=%27+OR+1%3D1%3B+--+&Submit=Submit#)
 
 เป็นการที่ hacker สามารถใส่ SQL command ผ่าน input ของ web application เพื่อให้เกิดผลบางอบ่างเช่น เพิ่มข้อมูลที่ไม่ควรเพิ่ม, ดูข้อมูลที่ไม่ควรดู, หรือลบข้อมูลที่ไม่ควรลบ
 
@@ -201,6 +209,8 @@ For each vulnerability, suggest/show a fix for it. If it is a threat (cannot be 
 | :------------: | :-----------------: | :-------------------: | :--------------: |
 |  Moderate (1)  |    Uncommon (1)     |      Average (2)      |    Minor (1)     |
 
+URL: [http://localhost:8080/vulnerabilities/csp/](http://localhost:8080/vulnerabilities/csp/)
+
 เป็นการที่ developer เปิดช่องให้ hacker สามารถโหลด script จากที่อื่นมาใส่ใน website ได้
 
 ![](./assets/csp-bypass.png)
@@ -230,6 +240,8 @@ For each vulnerability, suggest/show a fix for it. If it is a threat (cannot be 
 | Exploitability | Weakness Prevalence | Weakness Detecability | Technical Impact |
 | :------------: | :-----------------: | :-------------------: | :--------------: |
 |  Moderate (2)  |   Widespread (3)    |      Average (2)      |   Moderate (2)   |
+
+URL: [http://localhost:8080/vulnerabilities/xss_d/?default=English%3Cscript%3Ealert(%27hacked%27)%3C/script%3E](<http://localhost:8080/vulnerabilities/xss_d/?default=English%3Cscript%3Ealert(%27hacked%27)%3C/script%3E>)
 
 เป็นการที่ input ของ hacker มี javascript แอบไว้อยู่ ซึ่งจะทำให้ browser execute script นั้นออกมา โดย script นั้นอาจจะทำอะไรบางอย่างเพื่อให้ hacker ได้ผลประโยชน์ เช่น แอบดึงข้อมูลบางอย่างจาก user แล้วส่งข้อมูลกลับไปให้ hacker
 
@@ -262,6 +274,8 @@ For each vulnerability, suggest/show a fix for it. If it is a threat (cannot be 
 | :------------: | :-----------------: | :-------------------: | :--------------: |
 |    Easy (3)    |    Uncommon (3)     |       Easy (3)        |   Moderate (2)   |
 
+URL: [http://localhost:8080/vulnerabilities/weak_id/](http://localhost:8080/vulnerabilities/weak_id/)
+
 เป็นการที่ session id เดาได้ง่ายเกินไป ซึ่ง hacker อาจจะนำ session id นั้นไปปลอมตัว สวมรอยเป็นคนอื่น เพื่อใช้งานระบบ
 
 ### Exploitability
@@ -289,6 +303,8 @@ For each vulnerability, suggest/show a fix for it. If it is a threat (cannot be 
 | Exploitability | Weakness Prevalence | Weakness Detecability | Technical Impact |
 | :------------: | :-----------------: | :-------------------: | :--------------: |
 | Difficult (1)  |     Common (3)      |     Difficult (3)     |    Minor (1)     |
+
+URL: [http://localhost:8080/vulnerabilities/javascript/](http://localhost:8080/vulnerabilities/javascript/)
 
 เป็นการใช้ javascript function ที่ developer เป็นคนเขียนทิ้งไว้ เพื่อ bypass บางอย่าง หรือใช้ javascript ในการ execute โค้ดที่ไม่ได้รับอนุญาต
 
