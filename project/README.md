@@ -57,6 +57,12 @@ The purpose of this project is to educate you with the fundamentals of security 
     - [Weakness Detecability](#weakness-detecability-7)
     - [Technical Impact](#technical-impact-7)
     - [Fixes](#fixes-7)
+  - [9. File Upload](#9-file-upload)
+    - [Exploitability](#exploitability-8)
+    - [Weakness Prevalence](#weakness-prevalence-8)
+    - [Weakness Detecability](#weakness-detecability-8)
+    - [Technical Impact](#technical-impact-8)
+    - [Fixes](#fixes-8)
 
 # How to start DVWA
 
@@ -142,7 +148,7 @@ URL: [http://localhost:8080/vulnerabilities/exec/#](http://localhost:8080/vulner
 
 | Exploitability | Weakness Prevalence | Weakness Detecability | Technical Impact |
 | :------------: | :-----------------: | :-------------------: | :--------------: |
-|    Easy (3)    |    Uncommon (2)     |       Easy (3)        |   Moderate (2)   |
+|    Easy (3)    |    Uncommon (1)     |       Easy (3)        |   Moderate (2)   |
 
 URL: [http://localhost:8080/vulnerabilities/csrf/?password_new=password&password_conf=password&Change=Change#](http://localhost:8080/vulnerabilities/csrf/?password_new=password&password_conf=password&Change=Change#)
 
@@ -174,11 +180,13 @@ URL: [http://localhost:8080/vulnerabilities/csrf/?password_new=password&password
 
 | Exploitability | Weakness Prevalence | Weakness Detecability | Technical Impact |
 | :------------: | :-----------------: | :-------------------: | :--------------: |
-|  Moderate (2)  |   widespread (3)    |      Average (2)      |   Servere (3)    |
+|  Average (2)   |   widespread (3)    |      Average (2)      |   Servere (3)    |
 
 URL: [http://localhost:8080/vulnerabilities/sqli/?id=%27+OR+1%3D1%3B+--+&Submit=Submit#](http://localhost:8080/vulnerabilities/sqli/?id=%27+OR+1%3D1%3B+--+&Submit=Submit#)
 
 เป็นการที่ hacker สามารถใส่ SQL command ผ่าน input ของ web application เพื่อให้เกิดผลบางอบ่างเช่น เพิ่มข้อมูลที่ไม่ควรเพิ่ม, ดูข้อมูลที่ไม่ควรดู, หรือลบข้อมูลที่ไม่ควรลบ
+
+อย่างในกรณีนี้คือ ลองใส่ `' OR 1=1; -- ` ไปในช่อง input
 
 ![](./assets/sql-injection.png)
 
@@ -207,11 +215,11 @@ URL: [http://localhost:8080/vulnerabilities/sqli/?id=%27+OR+1%3D1%3B+--+&Submit=
 
 | Exploitability | Weakness Prevalence | Weakness Detecability | Technical Impact |
 | :------------: | :-----------------: | :-------------------: | :--------------: |
-|  Moderate (1)  |    Uncommon (1)     |      Average (2)      |    Minor (1)     |
+| Difficult (1)  |    Uncommon (1)     |      Average (2)      |    Minor (1)     |
 
 URL: [http://localhost:8080/vulnerabilities/csp/](http://localhost:8080/vulnerabilities/csp/)
 
-เป็นการที่ developer เปิดช่องให้ hacker สามารถโหลด script จากที่อื่นมาใส่ใน website ได้
+เป็นการที่ developer เปิดช่องให้ hacker สามารถโหลด script จากที่อื่นมาใส่ใน website ได้ อย่างในกรณีนี้คือลองเขียน javascript แล้วส่งให้ website ผ่าน input
 
 ![](./assets/csp-bypass.png)
 
@@ -239,7 +247,7 @@ URL: [http://localhost:8080/vulnerabilities/csp/](http://localhost:8080/vulnerab
 
 | Exploitability | Weakness Prevalence | Weakness Detecability | Technical Impact |
 | :------------: | :-----------------: | :-------------------: | :--------------: |
-|  Moderate (2)  |   Widespread (3)    |      Average (2)      |   Moderate (2)   |
+|  Average (2)   |   Widespread (3)    |      Average (2)      |   Moderate (2)   |
 
 URL: [http://localhost:8080/vulnerabilities/xss_d/?default=English%3Cscript%3Ealert(%27hacked%27)%3C/script%3E](<http://localhost:8080/vulnerabilities/xss_d/?default=English%3Cscript%3Ealert(%27hacked%27)%3C/script%3E>)
 
@@ -272,7 +280,7 @@ URL: [http://localhost:8080/vulnerabilities/xss_d/?default=English%3Cscript%3Eal
 
 | Exploitability | Weakness Prevalence | Weakness Detecability | Technical Impact |
 | :------------: | :-----------------: | :-------------------: | :--------------: |
-|    Easy (3)    |    Uncommon (3)     |       Easy (3)        |   Moderate (2)   |
+|    Easy (3)    |    Uncommon (1)     |       Easy (3)        |   Moderate (2)   |
 
 URL: [http://localhost:8080/vulnerabilities/weak_id/](http://localhost:8080/vulnerabilities/weak_id/)
 
@@ -302,7 +310,7 @@ URL: [http://localhost:8080/vulnerabilities/weak_id/](http://localhost:8080/vuln
 
 | Exploitability | Weakness Prevalence | Weakness Detecability | Technical Impact |
 | :------------: | :-----------------: | :-------------------: | :--------------: |
-| Difficult (1)  |     Common (3)      |     Difficult (3)     |    Minor (1)     |
+| Difficult (1)  |     Common (2)      |     Difficult (1)     |    Minor (1)     |
 
 URL: [http://localhost:8080/vulnerabilities/javascript/](http://localhost:8080/vulnerabilities/javascript/)
 
@@ -330,3 +338,45 @@ URL: [http://localhost:8080/vulnerabilities/javascript/](http://localhost:8080/v
 
 - ไม่มีวิธีป้องกันได้ 100% เนื่องจากผู้ใช้ทุกคนสามารถอ่าน source code ของ website ได้
 - พยายามใช้ parser ที่มีความปลอดภัยสูง และทำให้ complied code อ่านได้ยากขึ้น ซึ่งจะทำให้ hacker ทำความเข้าใจ code ได้ยากขึ้นด้วย
+
+## 9. File Upload
+
+| Exploitability | Weakness Prevalence | Weakness Detecability | Technical Impact |
+| :------------: | :-----------------: | :-------------------: | :--------------: |
+|  Average (2)   |     Common (2)      |       Easy (3)        |   Moderate (2)   |
+
+URL: [http://localhost:8080/vulnerabilities/upload/](http://localhost:8080/vulnerabilities/upload/)
+
+upload `index.php`
+
+```php
+<?php phpinfo(); ?>
+```
+
+เป็นการ upload script file ขึ้นไป แทนที่จะเป็นการ upload รูปหรือ video หากระบบเผลออ่าน script นั้นโดยไม่ได้ตั้งใจ ก็จะทำให้ script นั้นถูก execute ออกมา และอาจจะทำอันตรายกับระบบหรือขโมยข้อมูลได้
+
+URL: [http://localhost:8080/hackable/uploads/index.php](http://localhost:8080/hackable/uploads/index.php)
+
+![](./assets/file-upload.png)
+
+### Exploitability
+
+hacker ต้องใช้ effort ประมาณหนึ่งในการเขียน script เพื่อขโมยข้อมูลอะไรบางอย่างจากระบบหรือ developer
+
+### Weakness Prevalence
+
+พบได้ค่อนข้างง่าย เพราะ developer มักจะไม่ค่อย check file type ในฝั่ง backend
+
+### Weakness Detecability
+
+ค่อนข้างง่าย หากในส่วนหน้าบ้านไม่ได้มีการ check file type หรือหาก restrict file type ก้สามารถแก้ไข DOM เองแล้ว upload ไฟล์ก็ได้
+
+### Technical Impact
+
+ค่อนข้างมีผล หากระบบเผลอ execute script ที่ hacker ส่งมา จะทำให้ hacker สามารถขโมยข้อมูลได้
+
+### Fixes
+
+- พยายาม validate input ที่ให้มาว่ามี script อะไรฝังอยุ่หรือไม่
+- พยายามดู file type ว่าเป็นไฟล์ image หรือไม่
+- ลองดู metadata ของ file ว่าเป็น file ที่ต้องการหรือไม่
